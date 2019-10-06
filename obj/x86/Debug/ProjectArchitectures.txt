@@ -1,0 +1,1 @@
+C:\Users\maeka\source\repos\SmartMirrorRpPi\SmartMirrorRpPi.csproj;x86
