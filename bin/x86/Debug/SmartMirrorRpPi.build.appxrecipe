@@ -40,6 +40,21 @@
     <AppxPackagedFile Include="C:\Users\maeka\.nuget\packages\accord.statistics\3.8.2-alpha\lib\netstandard2.0\Accord.Statistics.dll">
       <PackagePath>Accord.Statistics.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\maeka\.nuget\packages\google.apis\1.41.1\lib\netstandard2.0\Google.Apis.dll">
+      <PackagePath>Google.Apis.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\maeka\.nuget\packages\google.apis.auth\1.41.1\lib\netstandard2.0\Google.Apis.Auth.PlatformServices.dll">
+      <PackagePath>Google.Apis.Auth.PlatformServices.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\maeka\.nuget\packages\google.apis.auth\1.41.1\lib\netstandard2.0\Google.Apis.Auth.dll">
+      <PackagePath>Google.Apis.Auth.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\maeka\.nuget\packages\google.apis.calendar.v3\1.41.1.1732\lib\netstandard2.0\Google.Apis.Calendar.v3.dll">
+      <PackagePath>Google.Apis.Calendar.v3.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\maeka\.nuget\packages\google.apis.core\1.41.1\lib\netstandard2.0\Google.Apis.Core.dll">
+      <PackagePath>Google.Apis.Core.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\maeka\.nuget\packages\magellanic.camera\0.0.4-alpha\lib\uap10.0\Magellanic.Camera.dll">
       <PackagePath>Magellanic.Camera.dll</PackagePath>
     </AppxPackagedFile>

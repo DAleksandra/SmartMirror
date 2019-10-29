@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Core;
 using Windows.Devices.Enumeration;
 using Windows.Devices.Gpio;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Graphics.Display;
+using Windows.Globalization.DateTimeFormatting;
 using Windows.Media.Capture;
 using Windows.Media.MediaProperties;
 using Windows.Storage;
@@ -19,12 +16,7 @@ using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
-using Windows.UI.Xaml.Navigation;
 
 //Szablon elementu Pusta strona jest udokumentowany na stronie https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x415
 
@@ -38,6 +30,7 @@ namespace SmartMirrorRpPi
     {
         private GpioController gpio;
         int number = 0;
+        int listener = 1;
         private GpioPin sensor;
         private MediaCapture _mediaCapture;
         BackgroundWorker worker = new BackgroundWorker();
@@ -48,12 +41,14 @@ namespace SmartMirrorRpPi
         public MainPage()
         {
             beginRecognize();
+
             this.InitializeComponent();
-            //Full screen mode
+
 
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
             LoadNewsFeed();
             LoadWeatherData();
+            LoadDate();
             Application.Current.Resuming += Application_Resuming;
             
 
@@ -80,28 +75,19 @@ namespace SmartMirrorRpPi
 
         private async void Sensor_ValueChanged(GpioPin sender, GpioPinValueChangedEventArgs args)
         {
-            if (args.Edge == GpioPinEdge.RisingEdge)
+            if (args.Edge == GpioPinEdge.RisingEdge && listener == 0)
             {
-                System.Diagnostics.Debug.WriteLine("MOTION DETECTED");
-
-               
+                listener = 1;
                 await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
                  () =>
                  {
                      Greetings.Text = "Move!" + number;
                      number++;
-                     // MakePhoto();
+                      MakePhoto();
                  });
+             
             }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("NO MOTION DETECTED");
-                await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
-                 () =>
-                 {
-                     
-                 });
-            }
+            
         }
         private async Task beginRecognize()
         {
@@ -110,6 +96,8 @@ namespace SmartMirrorRpPi
             algorithm.LearnAlgorithm(persons.imageList);
 
             InitializeCameraAsync();
+
+            listener = 0;
 
         }
         private async void LoadWeatherData()
@@ -129,7 +117,7 @@ namespace SmartMirrorRpPi
                 }
                
                 CityTextBox.Text = result.City.ToString();
-                TemperatureTextBox.Text = "Temperature: " + (result.Temperature -273.15).ToString("0.0") + " °C";
+                TemperatureTextBox.Text =(result.Temperature -273.15).ToString("0.0") + " °C";
                 WindTextBox.Text = "Wind: " + (result.Wind).ToString() + " mps";
                 HumidityTextBox.Text = "Humidity: " + (result.Humidity).ToString() + " %";
                 PressureTextBox.Text = "Pressure: " + (result.Pressure).ToString() + " hPa";
@@ -160,6 +148,23 @@ namespace SmartMirrorRpPi
                 UrlTextBlock.Text = result.url.ToString();
 
                 await Task.Delay(100000);
+            }
+
+        }
+
+        private async void LoadDate()
+        {
+            DateTime now;
+            var dateFormatter = new DateTimeFormatter("longdate", new[] { "en-US" });
+
+            while (true)
+            {             
+                now = DateTime.Now;
+                hour.Text = now.Hour.ToString() + ":" + now.Minute.ToString();
+                seconds.Text = now.Second.ToString();
+                date.Text = dateFormatter.Format(DateTime.Now);
+
+                await Task.Delay(1000);
             }
 
         }
@@ -203,30 +208,16 @@ namespace SmartMirrorRpPi
             //var file = await storageFolder.CreateFileAsync("Test" + ".png", CreationCollisionOption.ReplaceExisting);
 
             IReadOnlyList<StorageFile> files = await storageFolder.GetFilesAsync();
-            if (files.Count == 0)
-            {
-                var file = await storageFolder.CreateFileAsync("Test" + ".png", CreationCollisionOption.ReplaceExisting);
-                await _mediaCapture.CapturePhotoToStorageFileAsync(ImageEncodingProperties.CreatePng(), file);
-            }
-            else
-            {
-                var file = await storageFolder.CreateFileAsync("Test" + ".png", CreationCollisionOption.ReplaceExisting);
-                // var file = await storageFolder.CreateFileAsync((Int32.Parse((files[files.Count - 1].DisplayName)) + 1).ToString() + ".png", CreationCollisionOption.ReplaceExisting);
-                await _mediaCapture.CapturePhotoToStorageFileAsync(ImageEncodingProperties.CreatePng(), file);
-                await persons.addNewFace();
 
-                Greetings.Text = persons.getName(algorithm.RecognizeNewFace(persons.newFace));
-
-                await file.DeleteAsync(StorageDeleteOption.Default);
-            }
-
-
+            var file = await storageFolder.CreateFileAsync("Test" + ".png", CreationCollisionOption.ReplaceExisting);
+            await _mediaCapture.CapturePhotoToStorageFileAsync(ImageEncodingProperties.CreatePng(), file);
+            await persons.addNewFace();
+            Greetings.Text = "Hello " + persons.getName(algorithm.RecognizeNewFace(persons.newFace)) + "!";
+            await file.DeleteAsync(StorageDeleteOption.Default);
+            
+            listener = 0;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MakePhoto();
-        }
     }
 
 

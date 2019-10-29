@@ -170,6 +170,9 @@
     <PackageReference Include="Accord.Statistics">
       <Version>3.8.2-alpha</Version>
     </PackageReference>
+    <PackageReference Include="Google.Apis.Calendar.v3">
+      <Version>1.41.1.1732</Version>
+    </PackageReference>
     <PackageReference Include="Magellanic.Camera">
       <Version>0.0.4-alpha</Version>
     </PackageReference>

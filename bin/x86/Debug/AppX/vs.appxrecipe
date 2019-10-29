@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>8A1EEF4B78A1054AA73DFC7819ADF92929B4471D2E8CF8E5745E6AD7C2978FC6</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>22903A57753530B3627CF755FFC63061DF38701021797642E3BA30487777939F</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>6db651b8-4376-4ac1-92a4-26f2e0181bec_1.0.0.0_x86__k07a7m0qpx1er</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>6db651b8-4376-4ac1-92a4-26f2e0181bec_k07a7m0qpx1er!App</RegisteredUserModeAppID>
     <RegisteredPackageID>6db651b8-4376-4ac1-92a4-26f2e0181bec</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-10-05T21:24:40.873</Modified>
+      <Modified>2019-10-19T17:16:56.196</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\SmartMirrorRpPi.exe">
       <PackagePath>entrypoint\SmartMirrorRpPi.exe</PackagePath>
-      <Modified>2019-10-05T21:24:38.814</Modified>
+      <Modified>2019-10-19T17:16:54.196</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\maeka\.nuget\packages\accord\3.8.2-alpha\lib\netstandard2.0\Accord.dll">
       <PackagePath>Accord.dll</PackagePath>
@@ -53,6 +53,26 @@
     <AppxPackagedFile Include="C:\Users\maeka\.nuget\packages\accord.statistics\3.8.2-alpha\lib\netstandard2.0\Accord.Statistics.dll">
       <PackagePath>Accord.Statistics.dll</PackagePath>
       <Modified>2017-11-07T00:48:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\maeka\.nuget\packages\google.apis\1.41.1\lib\netstandard2.0\Google.Apis.dll">
+      <PackagePath>Google.Apis.dll</PackagePath>
+      <Modified>2019-09-11T08:12:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\maeka\.nuget\packages\google.apis.auth\1.41.1\lib\netstandard2.0\Google.Apis.Auth.PlatformServices.dll">
+      <PackagePath>Google.Apis.Auth.PlatformServices.dll</PackagePath>
+      <Modified>2019-09-11T08:12:32.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\maeka\.nuget\packages\google.apis.auth\1.41.1\lib\netstandard2.0\Google.Apis.Auth.dll">
+      <PackagePath>Google.Apis.Auth.dll</PackagePath>
+      <Modified>2019-09-11T08:12:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\maeka\.nuget\packages\google.apis.calendar.v3\1.41.1.1732\lib\netstandard2.0\Google.Apis.Calendar.v3.dll">
+      <PackagePath>Google.Apis.Calendar.v3.dll</PackagePath>
+      <Modified>2019-10-03T06:08:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\maeka\.nuget\packages\google.apis.core\1.41.1\lib\netstandard2.0\Google.Apis.Core.dll">
+      <PackagePath>Google.Apis.Core.dll</PackagePath>
+      <Modified>2019-09-11T08:12:18.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\maeka\.nuget\packages\magellanic.camera\0.0.4-alpha\lib\uap10.0\Magellanic.Camera.dll">
       <PackagePath>Magellanic.Camera.dll</PackagePath>
@@ -130,15 +150,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\SmartMirrorRpPi.xr.xml">
       <PackagePath>SmartMirrorRpPi.xr.xml</PackagePath>
-      <Modified>2019-10-05T19:13:02.314</Modified>
+      <Modified>2019-10-19T17:16:53.366</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-10-05T21:24:38.364</Modified>
+      <Modified>2019-10-19T17:16:53.426</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-10-05T21:24:38.364</Modified>
+      <Modified>2019-10-19T17:16:53.427</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -146,11 +166,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-10-05T21:24:39.700</Modified>
+      <Modified>2019-10-19T16:53:53.659</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\Core\SmartMirrorRpPi.exe">
       <PackagePath>SmartMirrorRpPi.exe</PackagePath>
-      <Modified>2019-10-05T21:24:40.854</Modified>
+      <Modified>2019-10-19T17:16:56.170</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

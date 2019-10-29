@@ -51,6 +51,10 @@
               "target": "Package",
               "version": "[3.8.2-alpha, )"
             },
+            "Google.Apis.Calendar.v3": {
+              "target": "Package",
+              "version": "[1.41.1.1732, )"
+            },
             "Magellanic.Camera": {
               "target": "Package",
               "version": "[0.0.4-alpha, )"

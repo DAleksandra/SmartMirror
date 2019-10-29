@@ -60,3 +60,13 @@ C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\Microsoft.Extensions.D
 C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\Microsoft.UI.Xaml.Markup.winmd
 C:\Users\maeka\source\repos\SmartMirrorRpPi\obj\x86\Debug\Microsoft.Extensions.DependencyInjection\en-US\Microsoft.Extensions.DependencyInjection.Resources.resw
 C:\Users\maeka\source\repos\SmartMirrorRpPi\obj\x86\Debug\Microsoft.Extensions.DependencyInjection.Abstractions\en-US\Microsoft.Extensions.DependencyInjection.Abstractions.Resources.resw
+C:\Users\maeka\source\repos\SmartMirrorRpPi\obj\x86\Debug\SmartMirrorRpPi.csprojAssemblyReference.cache
+C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\Google.Apis.dll
+C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\Google.Apis.pdb
+C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\Google.Apis.Auth.dll
+C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\Google.Apis.Auth.pdb
+C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\Google.Apis.Calendar.v3.dll
+C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\Google.Apis.Calendar.v3.pdb
+C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\Google.Apis.Core.dll
+C:\Users\maeka\source\repos\SmartMirrorRpPi\bin\x86\Debug\Google.Apis.Core.pdb
